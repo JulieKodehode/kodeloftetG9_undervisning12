@@ -1,0 +1,129 @@
+.changeColor {
+    height: 200px;
+    width: 200px;
+
+    background-color: red;
+    transition-property: background-color;
+    transition-duration: 1s;
+    transition-delay: 0.3s;
+
+    transition: background-color 1s;
+}
+
+.changeColor:hover {
+    background-color: green;
+}
+
+.makeBigger {
+    height: 200px;
+    width: 200px;
+
+    background-color: aqua;
+    /*transition-property: height, width;co */
+    transition-property: transform;
+    transition-duration: 3s;
+    transition: transform 3s ;
+}
+
+.makeBigger:hover {
+    /* height: 300px;
+    width: 300px; */
+    transform: scale(0.5);
+}
+
+
+
+.animateColor {
+    height: 200px;
+    width: 200px;
+
+    animation-name: swapColor;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.animateColor:hover {
+    animation-play-state: paused;
+}
+
+@keyframes swapColor {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: orange;
+    }
+    50% {
+        background-color: pink;
+    }
+    75% {
+        background-color: blue;
+    }
+    100% {
+        background-color: green;
+    }
+}
+
+.animateSize {
+    height: 200px;
+    width: 200px;
+    background-color: darkseagreen;
+
+    animation-name: sizeSwap;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes sizeSwap {
+    0% {
+        height: 200px;
+        width: 200px;
+    }
+    50% {
+        height: 250px;
+        width: 300px;
+    }
+    100% {
+        height: 300px;
+        width: 350px;
+    }
+}
+
+.card {
+    height: 300px;
+    width: 250px;
+    
+
+    position: relative;
+    transition: transform;
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.back {
+    transition: transform;
+}
+
+/* Orginalt i undervisningen hadde jeg psuedo-elementet :hover på her men det måtte taes bort for å få ønsket effekt  */
+.back {
+    transform: rotateY(180deg)
+}
